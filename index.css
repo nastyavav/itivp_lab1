@@ -795,6 +795,8 @@ ul li a {
         margin-left:5rem ;
         padding: 0rem;
         width: 90%;
+        padding-left: 3rem;
+        border-radius: 3.5rem;
     }
     .img-goal {
         margin-left: 5rem;
@@ -832,10 +834,10 @@ ul li a {
     h3 + p {
         /*font-weight: bold;
         color: #2F353F;*/
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
     h3 + p + p {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
 
