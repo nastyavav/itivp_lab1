@@ -737,7 +737,6 @@ ul li a {
 .burger-img {
     width: 5rem;  /* Уменьшаем размер картинки */
     height: 5rem; /* Уменьшаем размер картинки */
-    
 }
 
 .contact-button-img {
@@ -783,10 +782,10 @@ ul li a {
         background: #2E2BD0;
         width: 95.4375rem;
         height: 12.4375rem;
-        left: 9.613rem;
+        left: 7rem;
         z-index: -1;
     }
-   
+
     .container-goals {
         flex-direction: column !important;
         text-align: center;
@@ -802,6 +801,45 @@ ul li a {
         height: auto;
         width: 90% !important;
     }
+
+    /*h3 {
+        color:#2E2BD0;
+        padding-top: 1.69rem;
+    }
+    .container-goals {
+        display: flex;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: stretch;
+    }
+    .goal {
+        flex: 1;
+        text-align: left;
+        font-family: 'Montserrat';
+        font-size: 1.69rem;
+        padding-top: 1.69rem;
+        padding-left: 2.53rem;
+        border:1px solid #ccc;
+        border-radius: 2.11rem;
+    }
+    .img-goal {
+        height: 25.3rem;
+        width: auto;
+        border:0.084rem solid #ccc;
+        border-radius: 2.11rem;
+    }*/
+    h3 + p {
+        /*font-weight: bold;
+        color: #2F353F;*/
+        font-size: 3.5rem;
+    }
+    h3 + p + p {
+        font-size: 2.5rem;
+    }
+
+
+
     .contact-form {
         padding: 1.5rem;
         border-radius: 17.5rem;
@@ -891,7 +929,6 @@ ul li a {
     .burger-img {
         width: 10.217755443886098rem;  /* Уменьшаем размер картинки */
         height: 10.217755443886098rem; /* Уменьшаем размер картинки */
-        
     }
 
     .contact-button-img {
