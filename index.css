@@ -801,7 +801,9 @@ ul li a {
     .img-goal {
         margin-left: 5rem;
         height: auto;
-        width: 90% !important;
+        width: 92.5% !important;
+        border-radius: 3.5rem;
+        margin-left: 5rem;
     }
 
     /*h3 {
