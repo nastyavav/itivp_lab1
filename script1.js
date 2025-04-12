@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const contactButton = document.querySelector(".contact-button");
 
     contactButton.addEventListener("mouseover", function () {
-        contactButton.style.backgroundColor = "#ff5722"; // Новый цвет при наведении
+        contactButton.style.backgroundColor = "#a12bd0"; // Новый цвет при наведении
     });
 
     contactButton.addEventListener("mouseout", function () {
