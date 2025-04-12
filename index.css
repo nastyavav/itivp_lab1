@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Cairo-Regular';
     src: url('fonts/Cairo-Regular.ttf') format('truetype');
@@ -226,6 +227,13 @@ h3 + p + p {
     background: rgb(213, 213, 213);
 }
 
+.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
 /* HEADER */
 .header1 {
     position: relative;
@@ -375,11 +383,13 @@ nav {
 }
 
 .logo3 {
+    text-decoration: none;
     font-family: 'Cairo-ExtraBold';
     font-size: 2.1rem;
     font-weight: bold;
     line-height: 1.1;
-    color:#2F353F
+    color:#2F353F;
+    cursor: pointer;
 }
 
 .email {
@@ -651,6 +661,22 @@ ul li a {
     font-weight: 100;
 }
 
+.project-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: grab; /* Указатель при наведении на элемент */
+    transition: transform 0.1s ease;
+}
+
+/* Когда элемент перетаскивается, курсор меняется на 'grabbing' */
+.project-wrapper.dragging {
+    cursor: grabbing;
+    opacity: 0.5; /* Уменьшаем прозрачность во время перетаскивания */
+}
+
+/* Контейнер для всех элементов проектов */
 .projects-container {
     display: flex;
     justify-content: space-between;
@@ -659,10 +685,9 @@ ul li a {
     margin: 0 auto;
 }
 
-.project-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Для улучшения перетаскивания добавим плавное перемещение */
+.project-wrapper.dragging .project {
+    transition: none; /* Без анимации, пока перетаскивается */
 }
 
 .project {
@@ -674,6 +699,7 @@ ul li a {
     background-position: center;
     position: relative;
     overflow: hidden;
+    transition: transform 0.1s ease;
 }
 
 .project-wrapper:nth-of-type(1) .project {
@@ -688,6 +714,7 @@ ul li a {
     background-image: url('image/project3.jpg');
 }
 
+/* Полупрозрачный overlay для текста */
 .overlay {
     position: absolute;
     top: 0;
@@ -706,6 +733,7 @@ ul li a {
 .project:hover {
     transform: scale(1.1);
 }
+
 .project:hover .overlay {
     opacity: 1;
 }
@@ -721,7 +749,15 @@ ul li a {
 .project-title {
     font-family: 'Montserrat';
     font-size: 2.109704641350211rem;
+    text-align: center;
+    margin-top: 1rem; /* Расстояние от проекта */
 }
+
+/* Стили для состояния перетаскивания */
+.project-wrapper:active {
+    cursor: grabbing; /* Когда элемент перетаскивается, курсор меняется на 'grabbing' */
+}
+
 
 
 /* Базовые стили */
@@ -737,6 +773,7 @@ ul li a {
 .burger-img {
     width: 5rem;  /* Уменьшаем размер картинки */
     height: 5rem; /* Уменьшаем размер картинки */
+    
 }
 
 .contact-button-img {
@@ -782,10 +819,10 @@ ul li a {
         background: #2E2BD0;
         width: 95.4375rem;
         height: 12.4375rem;
-        left: 7rem;
+        left: 9.613rem;
         z-index: -1;
     }
-
+   
     .container-goals {
         flex-direction: column !important;
         text-align: center;
@@ -795,23 +832,12 @@ ul li a {
         margin-left:5rem ;
         padding: 0rem;
         width: 90%;
-        padding-left: 3rem;
-        border-radius: 3.5rem;
     }
     .img-goal {
         margin-left: 5rem;
         height: auto;
-        width: 92.5% !important;
-        border-radius: 3.5rem;
-        margin-left: 5rem;
+        width: 90% !important;
     }
-    h3 + p {
-        font-size: 4rem;
-    }
-    h3 + p + p {
-        font-size: 3rem;
-    }
-
     .contact-form {
         padding: 1.5rem;
         border-radius: 17.5rem;
@@ -901,6 +927,7 @@ ul li a {
     .burger-img {
         width: 10.217755443886098rem;  /* Уменьшаем размер картинки */
         height: 10.217755443886098rem; /* Уменьшаем размер картинки */
+        
     }
 
     .contact-button-img {
@@ -971,7 +998,7 @@ ul li a {
         text-align: center;
         margin-bottom: 0.8438818565400844rem;
     }
-
+    
     .menu {
         display: none;
         position: absolute;
@@ -1007,6 +1034,8 @@ ul li a {
         transition: background 0.3s ease;
     }
 
+
+
     .container-background {
         position: relative;
         margin-top:-26rem;
@@ -1040,7 +1069,7 @@ ul li a {
         justify-content: space-between;
         align-items: center;
         height: 20.93rem;
-
+    
     }
     .logo {
         text-align: center;
@@ -1063,9 +1092,8 @@ ul li a {
 
     .contact-button {
         display: none;
+        
     }
-
-
     /* footer */
     .footer {
         padding: 2rem 1rem; /* Уменьшаем отступы */
@@ -1079,14 +1107,14 @@ ul li a {
         color: white;
         margin-left: 9.9rem;
         padding: 0.56rem 1.12rem;
-        border-radius: 1.2rem;
+        border-radius: 0.315rem;
         font-weight: bold;
         display: inline-block;
         margin-top: 10px; /* Отступ сверху */
         position: relative; /* Убираем абсолютное позиционирование */
         font-size: 20px;
     }
-
+    
     footer .contact-button.footer-button:hover {
         text-decoration: none;
         background: #4846d4;
@@ -1116,21 +1144,23 @@ ul li a {
 
     .social-icons {
         justify-content: center; /* Центрируем иконки */
-        gap: 0.84rem; /* Уменьшаем расстояние */
+        gap: 0.6rem; /* Уменьшаем расстояние */
         margin-bottom: 1rem;
     }
 
     .social-icons img {
         width: 10.217755443886098rem;
         height: 10.217755443886098rem;
-        padding: 0.4rem;
-        border: 0.17rem solid blue;
-        border-radius: 0.42rem;
+        padding: 0.3rem;
     }
 
 
     h3 {
         font-size: 5.2rem; /* Уменьшаем заголовки */
+    }
+    h3 + p + p {
+        color: #636363;
+        font-size: 3.5rem;
     }
 
     ul {
@@ -1151,18 +1181,19 @@ ul li a {
         margin-right: auto;
         font-size: 20rem;
     }
-
+    
+    
     .concept-section {
         display: flex;
         flex-direction: column;
     }
 
     .concept-section > div {
-        width: 90%;
+        width: 100%;
     }
 
     .concept-section > div:not(:last-child) {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         border-right: none;
         border-bottom: 0.16877637130801687rem solid #2E2BD0;
@@ -1177,7 +1208,7 @@ ul li a {
     .concept {
         font-family: 'Montserrat';
         color: #2F353F;
-        font-size: 5.5rem;
+        font-size: 4.5625rem;
         padding-top: 1.2658227848101267rem;
         min-height: 4.219409282700422rem;
         margin-top: 1.6877637130801688rem;
@@ -1185,18 +1216,17 @@ ul li a {
     .concept + p {
         font-family: 'Montserrat';
         color: #636363;
-        font-size: 5rem;
+        font-size: 5.25rem;
         font-weight: 100;
         min-height: 8.438818565400844rem;
     }
 
 
-    .about-company, .about, .about-background, .about-p, .about-h3,
+    .about-company, .about, .about-background, .about-p, .about-h3, 
     .about-background-h3, .about-background-p {
         font-size: 5.2rem; /* Уменьшаем шрифты */
-        text-align: left;
+        text-align: center;
         margin-right: 5rem;
-        padding-left: 5rem;
     }
 
     .container-about {
@@ -1206,14 +1236,14 @@ ul li a {
     }
 
     .about {
-        width: 90%;
-        border-radius: 5rem;
+        padding: 1rem;
+        border-radius: 1.5rem;
     }
 
     .about-background {
         transform: none;
-        width: 90%;
-        border-radius: 5rem;
+        padding: 1.5rem;
+        margin-top: 10px;
     }
 
     .img-about {
